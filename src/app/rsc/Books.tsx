@@ -3,7 +3,7 @@ import { BooksList } from "../components/BooksList";
 import { BookEdit } from "./BookEdit";
 
 export const Books: FC<{ search: string }> = async ({ search }) => {
-  const booksResp = await fetch(`http://localhost:3000/api/books?search=${search}`, {
+  const booksResp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/books?search=${search}`, {
     next: {
       tags: ["books-query"],
     },

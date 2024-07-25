@@ -7,7 +7,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 export const Tags: FC<{}> = () => {
   const { data } = useSuspenseQuery({
     queryKey: ["tags-query"],
-    queryFn: () => fetch("http://localhost:3000/api/tags").then((resp) => resp.json()),
+    queryFn: () => fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tags`).then((resp) => resp.json()),
   });
 
   const { tags } = data;

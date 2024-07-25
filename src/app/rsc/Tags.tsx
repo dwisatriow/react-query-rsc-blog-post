@@ -2,7 +2,7 @@ import { FC } from "react";
 import { TagsList } from "../components/TagsList";
 
 export const Tags: FC<{}> = async () => {
-  const tagsResp = await fetch("http://localhost:3000/api/tags", {
+  const tagsResp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tags`, {
     next: {
       tags: ["tags-query"],
     },

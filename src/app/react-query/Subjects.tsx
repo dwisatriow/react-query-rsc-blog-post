@@ -7,7 +7,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 export const Subjects: FC<{}> = () => {
   const { data } = useSuspenseQuery({
     queryKey: ["subejcts-query"],
-    queryFn: () => fetch("http://localhost:3000/api/subjects").then((resp) => resp.json()),
+    queryFn: () => fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/subjects`).then((resp) => resp.json()),
   });
 
   const { subjects } = data;

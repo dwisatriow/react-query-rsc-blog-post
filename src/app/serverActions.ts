@@ -3,7 +3,7 @@
 import { revalidateTag } from "next/cache";
 
 export const saveBook = async (id: number, title: string) => {
-  await fetch("http://localhost:3000/api/books/update", {
+  await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/books/update`, {
     method: "POST",
     body: JSON.stringify({
       id,
